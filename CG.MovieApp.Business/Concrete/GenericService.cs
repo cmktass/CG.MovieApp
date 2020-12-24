@@ -17,9 +17,10 @@ namespace CG.MovieApp.Business.Concrete
             this.genericDal = genericDal;
         }
 
-        public Task Add(TEntity entity)
+        public async Task Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            
+            await genericDal.Add(entity);
         }
 
         public Task Delete(TEntity entity)
