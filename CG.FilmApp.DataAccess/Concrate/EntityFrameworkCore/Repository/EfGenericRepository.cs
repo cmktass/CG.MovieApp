@@ -15,7 +15,7 @@ namespace CG.MovieApp.DataAccess.Concrate.EntityFrameworkCore.Repository
         {
             using(var context=new MovieAppContext())
             {
-                context.Add(entity);
+                context.Set<TEntity>().Add(entity);
                 await context.SaveChangesAsync();
             }
         }

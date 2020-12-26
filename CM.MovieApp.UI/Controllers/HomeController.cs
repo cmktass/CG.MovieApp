@@ -7,12 +7,12 @@ namespace CM.MovieApp.UI.Controllers
     public class HomeController : Controller
     {
        
-        public HomeController(IFilmService filmService)
+        public HomeController()
         {
            
         }
         
-        public IActionResult Index(Film film)
+        public IActionResult Index()
         {
             
             return View();

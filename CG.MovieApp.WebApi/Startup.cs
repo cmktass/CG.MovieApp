@@ -1,18 +1,20 @@
-using AutoMapper;
 using CG.MovieApp.Business.Concrete;
 using CG.MovieApp.Business.Interfaces;
-using CG.MovieApp.DataAccess.Concrate.EntityFrameworkCore.Context;
 using CG.MovieApp.DataAccess.Concrate.EntityFrameworkCore.Repository;
 using CG.MovieApp.DataAccess.Interfaces.Dal;
-using CM.MovieApp.UI.Mapping.AutoMapping;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace CM.MovieApp.UI
+namespace CG.MovieApp.WebApi
 {
     public class Startup
     {
@@ -41,13 +43,7 @@ namespace CM.MovieApp.UI
             services.AddScoped<IDirectorService, DirectorService>();
             services.AddScoped<IDirectorDal, DirectorRepository>();
 
-            services.AddAutoMapper(typeof(Startup));
-
-            
-
-            services.AddControllersWithViews();
-
-
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,11 +53,6 @@ namespace CM.MovieApp.UI
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
-            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -69,9 +60,7 @@ namespace CM.MovieApp.UI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
         }
     }

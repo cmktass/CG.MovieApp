@@ -19,7 +19,6 @@ namespace CG.MovieApp.Business.Concrete
 
         public async Task Add(TEntity entity)
         {
-            
             await genericDal.Add(entity);
         }
 
@@ -28,9 +27,9 @@ namespace CG.MovieApp.Business.Concrete
             throw new NotImplementedException();
         }
 
-        public Task<List<TEntity>> GetAll()
+        public async Task<List<TEntity>> GetAll()
         {
-            throw new NotImplementedException();
+            return  await genericDal.GetAll();
         }
 
         public Task<TEntity> GetById(int id)

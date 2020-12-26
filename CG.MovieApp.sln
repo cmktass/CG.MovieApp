@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.MovieAppEntity", "CG.Mov
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.MovieApp.DataAccess", "CG.FilmApp.DataAccess\CG.MovieApp.DataAccess.csproj", "{4632E939-77B0-41EF-98B8-EF11108B07CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG.MovieApp.Business", "CG.MovieApp.Business\CG.MovieApp.Business.csproj", "{CC16C397-7939-4492-882C-B225C2C121ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CG.MovieApp.Business", "CG.MovieApp.Business\CG.MovieApp.Business.csproj", "{CC16C397-7939-4492-882C-B225C2C121ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM.MovieApp.UI", "CM.MovieApp.UI\CM.MovieApp.UI.csproj", "{F76E435B-C93D-4F2B-9EBA-281465DF66A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CM.MovieApp.UI", "CM.MovieApp.UI\CM.MovieApp.UI.csproj", "{F76E435B-C93D-4F2B-9EBA-281465DF66A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG.MovieApp.WebApi", "CG.MovieApp.WebApi\CG.MovieApp.WebApi.csproj", "{8C77A331-547B-4BC5-9883-11C20B72273C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F76E435B-C93D-4F2B-9EBA-281465DF66A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F76E435B-C93D-4F2B-9EBA-281465DF66A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F76E435B-C93D-4F2B-9EBA-281465DF66A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C77A331-547B-4BC5-9883-11C20B72273C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C77A331-547B-4BC5-9883-11C20B72273C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C77A331-547B-4BC5-9883-11C20B72273C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C77A331-547B-4BC5-9883-11C20B72273C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
