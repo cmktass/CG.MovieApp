@@ -11,7 +11,7 @@ namespace CG.MovieApp.DataAccess.Concrate.EntityFrameworkCore.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=MovieApp");
+            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=MovieAppDb;Integrated Security=SSPI;") ;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

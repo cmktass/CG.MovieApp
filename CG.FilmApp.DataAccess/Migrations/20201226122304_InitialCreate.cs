@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CG.MovieApp.DataAccess.Migrations
 {
-    public partial class FirstMigrations : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,12 +11,12 @@ namespace CG.MovieApp.DataAccess.Migrations
                 name: "Actors",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 35, nullable: false),
-                    LastName = table.Column<string>(type: "TEXT", maxLength: 35, nullable: false),
-                    Country = table.Column<string>(type: "TEXT", nullable: false),
-                    BirthDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,9 +27,9 @@ namespace CG.MovieApp.DataAccess.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,12 +40,12 @@ namespace CG.MovieApp.DataAccess.Migrations
                 name: "Directors",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 35, nullable: false),
-                    LastName = table.Column<string>(type: "TEXT", maxLength: 35, nullable: false),
-                    Country = table.Column<string>(type: "TEXT", nullable: false),
-                    BirthDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -56,20 +56,20 @@ namespace CG.MovieApp.DataAccess.Migrations
                 name: "Films",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    NameTr = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    NameEn = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    VisionDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Time = table.Column<int>(type: "INTEGER", nullable: false),
-                    ImdbScore = table.Column<int>(type: "INTEGER", nullable: false),
-                    Title = table.Column<string>(type: "TEXT", maxLength: 1500, nullable: false),
-                    Country = table.Column<string>(type: "TEXT", nullable: true),
-                    Budget = table.Column<int>(type: "INTEGER", nullable: false),
-                    Revenues = table.Column<int>(type: "INTEGER", nullable: false),
-                    ImageUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    FragmentUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    DirectorId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NameTr = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    NameEn = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    VisionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Time = table.Column<int>(type: "int", nullable: false),
+                    ImdbScore = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Budget = table.Column<int>(type: "int", nullable: false),
+                    Revenues = table.Column<int>(type: "int", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FragmentUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DirectorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -86,8 +86,8 @@ namespace CG.MovieApp.DataAccess.Migrations
                 name: "FilmActors",
                 columns: table => new
                 {
-                    FilmId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ActorId = table.Column<int>(type: "INTEGER", nullable: false)
+                    FilmId = table.Column<int>(type: "int", nullable: false),
+                    ActorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -110,8 +110,8 @@ namespace CG.MovieApp.DataAccess.Migrations
                 name: "FilmCategories",
                 columns: table => new
                 {
-                    FilmId = table.Column<int>(type: "INTEGER", nullable: false),
-                    CategoryId = table.Column<int>(type: "INTEGER", nullable: false)
+                    FilmId = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
