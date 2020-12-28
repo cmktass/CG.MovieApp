@@ -15,49 +15,60 @@ namespace CM.MovieApp.UI.Controllers
     {
         private ICategoryService categoryService;
         private IMapper mapper;
-
         public AdminController(ICategoryService categoryService,IMapper mapper)
         {
             this.categoryService = categoryService;
             this.mapper = mapper;
-        }
-        public IActionResult AddFilm()
-        {
-            return View();
-        }
-
-        public IActionResult AddActor()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult AddActor(ActorModel actor)
-        {
-            if(ModelState.IsValid)
-            {
-                return RedirectToAction("index", "home");
-            }
-            return View(actor);
         }
 
         public IActionResult AddCategory()
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> AddCategory(CategoryModel categoryModel)
+        public IActionResult AddCategory(CategoryModel category)
         {
             if (ModelState.IsValid)
             {
-                await categoryService.Add(mapper.Map<Category>(categoryModel));
+                categoryService.Add(mapper.Map<Category>(category));
                 return RedirectToAction("index", "home");
             }
-            else
-            {
-                return View(categoryModel);
-            }
-           
+            return View(category);
         }
+        public IActionResult AddFilm()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddFilm(int i)
+        {
+            return View();
+        }
+        public IActionResult AddActor()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddActor(ActorModel actor)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("index", "home");
+            }
+            return View(actor);
+        }
+        public IActionResult AddDirector()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddDirector(DirectorModel director)
+        {
+            return View();
+        }
+
+        
     }
 }

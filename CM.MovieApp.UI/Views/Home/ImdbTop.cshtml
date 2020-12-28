@@ -1,0 +1,57 @@
+﻿<!-- faq-banner -->
+<div class="faq">
+    <div class="container">
+        <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+            <div id="myTabContent" class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                    <div class="agile-news-table">
+                        <div class="w3ls-news-result">
+                        </div>
+                        <table id="table-breakpoint">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Movie Name</th>
+                                    <th>Year</th>
+                                    <th>Status</th>
+                                    <th>Country</th>
+                                    <th>Genre</th>
+                                    <th>Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < 25; i++)
+                                {
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="w3-list-img"><a href="/home/details"><img src="/images/n1.jpg" alt="" /> <span>01 Ben-Hur</span></a></td>
+                                        <td>2013</td>
+                                        <td>HD</td>
+                                        <td class="w3-list-info"><a href="genres.html">United Kingdom</a></td>
+                                        <td class="w3-list-info"><a href="comedy.html">Comedy, Drama</a></td>
+                                        <td>7.0</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //faq-banner -->
+<!--Pageable-->
+<div class="blog-pagenat-wthree">
+    <ul>
+        <li><a class="frist" href="#">Prev</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a class="last" href="#">Next</a></li>
+    </ul>
+</div>
+<!--/Pageable-->

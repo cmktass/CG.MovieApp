@@ -1,1 +1,79 @@
-﻿
+﻿@model CG.MovieApp.UI.Models.FilmModel
+
+<br />
+<br />
+
+
+<div class="col-sm-3">
+</div>
+<form asp-controller="Admin" asp-action="AddFilm" method="post">
+    <div class="col-sm-6">
+        <div class="form-group row">
+            <label asp-for="NameEn" class="mr-sm-2"></label>
+            <input type="text" class="form-control mb-2 mr-sm-2" asp-for="NameEn">
+            <span asp-validation-for="NameEn" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="NameTr" class="mr-sm-2"></label>
+            <input type="text" class="form-control mb-2 mr-sm-2" asp-for="NameTr">
+            <span asp-validation-for="NameTr" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="VisionDate" class="mr-sm-2"></label>
+            <input type="date" class="form-control mb-2 mr-sm-2" asp-for="VisionDate">
+            <span asp-validation-for="VisionDate" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Time" class="mr-sm-2"></label>
+            <input class="form-control mb-2 mr-sm-2" asp-for="Time" type="number">
+            <span asp-validation-for="Time" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="ImdbScore" class="mr-sm-2"></label>
+            <input class="form-control mb-2 mr-sm-2" asp-for="ImdbScore" type="number">
+            <span asp-validation-for="ImdbScore" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Title" class="mr-sm-2"></label>
+            <textarea class="form-control" asp-for="Title" rows="3"></textarea>
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Country" class="mr-sm-2"></label>
+            <input type="text" class="form-control mb-2 mr-sm-2" asp-for="Country">
+            <span asp-validation-for="Country" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="ImageUrl" class="mr-sm-2"></label>
+            <input type="text" class="form-control mb-2 mr-sm-2" asp-for="ImageUrl">
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="FragmentUrl" class="mr-sm-2"></label>
+            <input type="text" class="form-control mb-2 mr-sm-2" asp-for="FragmentUrl">
+            <span asp-validation-for="FragmentUrl" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Budget" class="mr-sm-2"></label>
+            <input class="form-control mb-2 mr-sm-2" asp-for="Budget" type="number">
+            <span asp-validation-for="Budget" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Revenues" class="mr-sm-2"></label>
+            <input class="form-control mb-2 mr-sm-2" asp-for="Revenues" type="number">
+            <span asp-validation-for="Revenues" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        </div>
+    </div>
+</form>
+
+<div class="col-sm-3">
+</div>
+</div>
+@for (int i = 0; i < 45; i++)
+{
+    <br />
+}

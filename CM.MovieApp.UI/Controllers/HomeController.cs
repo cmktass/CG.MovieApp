@@ -14,12 +14,22 @@ namespace CM.MovieApp.UI.Controllers
         
         public IActionResult Index()
         {
-            
             return View();
         }
+
         public IActionResult Details()
         {
+            return View();
+        }
 
+        public IActionResult ImdbTop()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Best()
+        {
             return View();
         }
 
