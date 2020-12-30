@@ -14,6 +14,8 @@ namespace CG.MovieAppEntity.Entities
 
         public string Country { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public DateTime BirthDate { get; set; }
 
         public List<Film> Films { get; set; }

@@ -7,6 +7,6 @@ namespace CG.MovieApp.DataAccess.Interfaces.Dal
 {
     public interface IActorDal:IGenericDal<Actor>
     {
-
+         Actor GetByName(string name);
     }
 }

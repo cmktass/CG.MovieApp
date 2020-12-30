@@ -4,6 +4,7 @@ using CG.MovieApp.UI.Models;
 using CG.MovieAppEntity.Entities;
 using CM.MovieApp.UI.Mapping.AutoMapping;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,19 @@ namespace CM.MovieApp.UI.Controllers
 {
     public class AdminController : Controller
     {
-        private ICategoryService categoryService;
         private IMapper mapper;
-        public AdminController(ICategoryService categoryService,IMapper mapper)
+        private ICategoryService categoryService;
+        private IActorService actorService;
+        private IDirectorService directorService;
+        private IFilmService filmService;
+        
+        public AdminController(IMapper mapper,ICategoryService categoryService,IActorService actorService,IDirectorService directorService,IFilmService filmService)
         {
-            this.categoryService = categoryService;
             this.mapper = mapper;
+            this.categoryService = categoryService;
+            this.actorService=actorService;
+            this.directorService=directorService;
+            this.filmService=filmService;
         }
 
         public IActionResult AddCategory()
@@ -36,15 +44,24 @@ namespace CM.MovieApp.UI.Controllers
             }
             return View(category);
         }
-        public IActionResult AddFilm()
+
+
+        public async Task<IActionResult> AddFilm()
         {
+            var allCategory=await categoryService.GetAll();
+            ViewBag.AllCategory=allCategory;
             return View();
         }
         [HttpPost]
-        public IActionResult AddFilm(int i)
+        public async Task<IActionResult> AddFilm(FilmModel film)
         {
+            var allCategory=await categoryService.GetAll();
+            ViewBag.AllCategory=allCategory;
             return View();
         }
+
+
+
         public IActionResult AddActor()
         {
             return View();
@@ -54,10 +71,27 @@ namespace CM.MovieApp.UI.Controllers
         {
             if (ModelState.IsValid)
             {
+                actorService.Add(mapper.Map<Actor>(actor));
                 return RedirectToAction("index", "home");
             }
             return View(actor);
         }
+
+        public IActionResult getActorName(string actorName)
+        {
+             var actor= actorService.GetByName(actorName);
+              var jsonKulanıcılar=JsonConvert.SerializeObject(actor);
+             if(actor!=null){
+                 return Json(true);
+             }
+             else{
+                  return Json(false);
+             }
+        }
+    
+
+
+
         public IActionResult AddDirector()
         {
             return View();
@@ -66,9 +100,12 @@ namespace CM.MovieApp.UI.Controllers
         [HttpPost]
         public IActionResult AddDirector(DirectorModel director)
         {
-            return View();
+            if(ModelState.IsValid)
+            {
+                directorService.Add(mapper.Map<Director>(director));
+                RedirectToAction("index","home");
+            }
+            return View(director);
         }
-
-        
     }
 }

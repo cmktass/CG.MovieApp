@@ -164,6 +164,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- nav -->
     @await Html.PartialAsync("_navbar")
     <!-- //nav -->
+
+
     <div class="general_social_icons">
         <nav class="social">
             <ul>
@@ -176,13 +178,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     
     <!-- general -->
-    @RenderBody()
+                @RenderBody()
     <!-- //general -->
     <!-- footer -->
     @await Html.PartialAsync("_footer")
     <!-- //footer -->
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+    @RenderSection("JqueryAjax", required: false)
 </body>
 </html>

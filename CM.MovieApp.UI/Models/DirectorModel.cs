@@ -18,6 +18,9 @@ namespace CG.MovieApp.UI.Models
         [Required(ErrorMessage ="Bu alan boş geçilemez.")]
         public string Country { get; set; }
 
+        [Required(ErrorMessage = "Bu alan boş geçilemez.")]
+        public string ImageUrl { get; set; }
+
         public DateTime BirthDate { get; set; }
 
         public List<FilmModel> Films { get; set; }

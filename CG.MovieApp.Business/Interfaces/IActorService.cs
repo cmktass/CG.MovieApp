@@ -7,6 +7,6 @@ namespace CG.MovieApp.Business.Interfaces
 {
     public interface IActorService:IGenericService<Actor>
     {
-
+            Actor GetByName(string name);
     }
 }

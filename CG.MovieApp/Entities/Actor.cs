@@ -18,6 +18,8 @@ namespace CG.MovieAppEntity.Entities
 
         public DateTime BirthDate { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public List<FilmActor> FilmActors { get; set; }
 
     }

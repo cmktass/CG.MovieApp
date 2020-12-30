@@ -9,9 +9,15 @@ namespace CG.MovieApp.Business.Concrete
 {
     public class ActorService:GenericService<Actor>,IActorService
     {
-        public ActorService(IGenericDal<Actor> genericDal):base(genericDal)
+        private IActorDal actorDal;
+        public ActorService(IGenericDal<Actor> genericDal,IActorDal actorDal):base(genericDal)
         {
+            this.actorDal=actorDal;
+        }
 
+        public Actor GetByName(string name)
+        {
+            return actorDal.GetByName(name);
         }
     }
 }

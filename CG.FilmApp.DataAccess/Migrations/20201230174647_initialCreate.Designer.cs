@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CG.MovieApp.DataAccess.Migrations
 {
     [DbContext(typeof(MovieAppContext))]
-    [Migration("20201226122304_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201230174647_initialCreate")]
+    partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,9 @@ namespace CG.MovieApp.DataAccess.Migrations
 
                     b.Property<string>("Country")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
@@ -79,6 +82,9 @@ namespace CG.MovieApp.DataAccess.Migrations
 
                     b.Property<string>("Country")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")

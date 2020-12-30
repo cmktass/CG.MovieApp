@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CG.MovieApp.DataAccess.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,8 @@ namespace CG.MovieApp.DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -45,6 +46,7 @@ namespace CG.MovieApp.DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
